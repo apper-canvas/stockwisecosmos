@@ -164,7 +164,7 @@ const Inventory = ({ searchValue = '' }) => {
           </p>
         </div>
         
-        <Button
+<Button
           variant="primary"
           icon="Plus"
           onClick={() => setShowAddForm(true)}
@@ -172,9 +172,6 @@ const Inventory = ({ searchValue = '' }) => {
           Add Product
         </Button>
       </motion.div>
-</Button>
-      </motion.div>
-
       {/* Add Product Form */}
       {showAddForm && (
         <motion.div
