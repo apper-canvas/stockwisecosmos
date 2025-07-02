@@ -1,0 +1,103 @@
+[
+  {
+    "Id": 1,
+    "supplier": "TechSupply Co",
+    "orderDate": "2024-01-15",
+    "status": "Pending",
+    "items": [
+      {
+        "productId": 1,
+        "productName": "Wireless Bluetooth Headphones",
+        "quantity": 50,
+        "unitPrice": 65.00,
+        "totalPrice": 3250.00
+      },
+      {
+        "productId": 4,
+        "productName": "LED Desk Lamp",
+        "quantity": 25,
+        "unitPrice": 22.00,
+        "totalPrice": 550.00
+      }
+    ],
+    "totalAmount": 3800.00
+  },
+  {
+    "Id": 2,
+    "supplier": "Green Textiles",
+    "orderDate": "2024-01-12",
+    "status": "Received",
+    "items": [
+      {
+        "productId": 2,
+        "productName": "Organic Cotton T-Shirt",
+        "quantity": 100,
+        "unitPrice": 15.00,
+        "totalPrice": 1500.00
+      }
+    ],
+    "totalAmount": 1500.00
+  },
+  {
+    "Id": 3,
+    "supplier": "EcoWare Ltd",
+    "orderDate": "2024-01-10",
+    "status": "Received",
+    "items": [
+      {
+        "productId": 3,
+        "productName": "Stainless Steel Water Bottle",
+        "quantity": 75,
+        "unitPrice": 12.00,
+        "totalPrice": 900.00
+      },
+      {
+        "productId": 9,
+        "productName": "Essential Oil Diffuser",
+        "quantity": 30,
+        "unitPrice": 25.00,
+        "totalPrice": 750.00
+      }
+    ],
+    "totalAmount": 1650.00
+  },
+  {
+    "Id": 4,
+    "supplier": "Wellness Direct",
+    "orderDate": "2024-01-08",
+    "status": "Pending",
+    "items": [
+      {
+        "productId": 5,
+        "productName": "Yoga Mat Premium",
+        "quantity": 40,
+        "unitPrice": 30.00,
+        "totalPrice": 1200.00
+      },
+      {
+        "productId": 10,
+        "productName": "Resistance Bands Set",
+        "quantity": 60,
+        "unitPrice": 18.00,
+        "totalPrice": 1080.00
+      }
+    ],
+    "totalAmount": 2280.00
+  },
+  {
+    "Id": 5,
+    "supplier": "EcoTech",
+    "orderDate": "2024-01-16",
+    "status": "Pending",
+    "items": [
+      {
+        "productId": 8,
+        "productName": "Bamboo Phone Stand",
+        "quantity": 80,
+        "unitPrice": 10.00,
+        "totalPrice": 800.00
+      }
+    ],
+    "totalAmount": 800.00
+  }
+]

@@ -1,0 +1,102 @@
+[
+  {
+    "Id": 1,
+    "name": "Wireless Bluetooth Headphones",
+    "sku": "WBH-001",
+    "price": 89.99,
+    "stockLevel": 25,
+    "lowStockThreshold": 10,
+    "category": "Electronics",
+    "supplier": "TechSupply Co"
+  },
+  {
+    "Id": 2,
+    "name": "Organic Cotton T-Shirt",
+    "sku": "OCT-002",
+    "price": 24.99,
+    "stockLevel": 5,
+    "lowStockThreshold": 15,
+    "category": "Clothing",
+    "supplier": "Green Textiles"
+  },
+  {
+    "Id": 3,
+    "name": "Stainless Steel Water Bottle",
+    "sku": "SWB-003",
+    "price": 19.99,
+    "stockLevel": 45,
+    "lowStockThreshold": 20,
+    "category": "Home & Garden",
+    "supplier": "EcoWare Ltd"
+  },
+  {
+    "Id": 4,
+    "name": "LED Desk Lamp",
+    "sku": "LDL-004",
+    "price": 34.99,
+    "stockLevel": 12,
+    "lowStockThreshold": 8,
+    "category": "Electronics",
+    "supplier": "Bright Solutions"
+  },
+  {
+    "Id": 5,
+    "name": "Yoga Mat Premium",
+    "sku": "YMP-005",
+    "price": 49.99,
+    "stockLevel": 8,
+    "lowStockThreshold": 12,
+    "category": "Sports & Fitness",
+    "supplier": "Wellness Direct"
+  },
+  {
+    "Id": 6,
+    "name": "Coffee Beans - Dark Roast",
+    "sku": "CBR-006",
+    "price": 14.99,
+    "stockLevel": 30,
+    "lowStockThreshold": 15,
+    "category": "Food & Beverage",
+    "supplier": "Roasters Guild"
+  },
+  {
+    "Id": 7,
+    "name": "Notebook Set (3-Pack)",
+    "sku": "NBS-007",
+    "price": 12.99,
+    "stockLevel": 18,
+    "lowStockThreshold": 10,
+    "category": "Office Supplies",
+    "supplier": "Paper Plus"
+  },
+  {
+    "Id": 8,
+    "name": "Bamboo Phone Stand",
+    "sku": "BPS-008",
+    "price": 16.99,
+    "stockLevel": 3,
+    "lowStockThreshold": 10,
+    "category": "Electronics",
+    "supplier": "EcoTech"
+  },
+  {
+    "Id": 9,
+    "name": "Essential Oil Diffuser",
+    "sku": "EOD-009",
+    "price": 39.99,
+    "stockLevel": 22,
+    "lowStockThreshold": 8,
+    "category": "Home & Garden",
+    "supplier": "Aroma Works"
+  },
+  {
+    "Id": 10,
+    "name": "Resistance Bands Set",
+    "sku": "RBS-010",
+    "price": 28.99,
+    "stockLevel": 6,
+    "lowStockThreshold": 15,
+    "category": "Sports & Fitness",
+    "supplier": "Fit Supply"
+  }
+]
