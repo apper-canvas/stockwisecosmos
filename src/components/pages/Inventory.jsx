@@ -1,15 +1,15 @@
-import React, { useState, useEffect } from 'react'
-import { motion } from 'framer-motion'
-import { toast } from 'react-toastify'
-import Card from '@/components/atoms/Card'
-import Button from '@/components/atoms/Button'
-import Badge from '@/components/atoms/Badge'
-import Input from '@/components/atoms/Input'
-import Loading from '@/components/ui/Loading'
-import Error from '@/components/ui/Error'
-import Empty from '@/components/ui/Empty'
-import ApperIcon from '@/components/ApperIcon'
-import { productService } from '@/services/api/productService'
+import React, { useEffect, useState } from "react";
+import { motion } from "framer-motion";
+import { toast } from "react-toastify";
+import ApperIcon from "@/components/ApperIcon";
+import Badge from "@/components/atoms/Badge";
+import Card from "@/components/atoms/Card";
+import Input from "@/components/atoms/Input";
+import Button from "@/components/atoms/Button";
+import Error from "@/components/ui/Error";
+import Empty from "@/components/ui/Empty";
+import Loading from "@/components/ui/Loading";
+import { productService } from "@/services/api/productService";
 
 const Inventory = ({ searchValue = '' }) => {
   const [products, setProducts] = useState([])
@@ -155,7 +155,7 @@ const Inventory = ({ searchValue = '' }) => {
       animate="visible"
       className="space-y-6"
     >
-      {/* Header */}
+{/* Header */}
       <motion.div variants={itemVariants} className="flex items-center justify-between">
         <div>
           <h1 className="text-3xl font-bold text-slate-900">Inventory Management</h1>
@@ -171,6 +171,8 @@ const Inventory = ({ searchValue = '' }) => {
         >
           Add Product
         </Button>
+      </motion.div>
+</Button>
       </motion.div>
 
       {/* Add Product Form */}
