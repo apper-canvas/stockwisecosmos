@@ -7,6 +7,7 @@ const Input = ({
   placeholder,
   value,
   onChange,
+  onKeyDown,
   error,
   disabled = false,
   required = false,
@@ -41,11 +42,12 @@ const Input = ({
           </div>
         )}
         
-        <input
+<input
           type={type}
           placeholder={placeholder}
           value={value}
           onChange={onChange}
+          onKeyDown={onKeyDown}
           disabled={disabled}
           required={required}
           className={inputClasses}

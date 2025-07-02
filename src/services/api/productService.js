@@ -77,7 +77,16 @@ export const productService = {
       throw new Error('Product not found')
     }
     
-    products[index].stockLevel = parseInt(newStockLevel) || 0
+products[index].stockLevel = parseInt(newStockLevel) || 0
     return { ...products[index] }
+  },
+
+  async getByBarcode(barcode) {
+    await delay(200)
+    const product = products.find(p => p.barcode === barcode)
+    if (!product) {
+      throw new Error('Product not found')
+    }
+    return { ...product }
   }
 }

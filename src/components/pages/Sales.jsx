@@ -10,6 +10,7 @@ import Loading from '@/components/ui/Loading'
 import Error from '@/components/ui/Error'
 import Empty from '@/components/ui/Empty'
 import FormField from '@/components/molecules/FormField'
+import BarcodeScanner from '@/components/molecules/BarcodeScanner'
 import ApperIcon from '@/components/ApperIcon'
 import { salesService } from '@/services/api/salesService'
 import { productService } from '@/services/api/productService'
@@ -20,10 +21,11 @@ const Sales = () => {
   const [loading, setLoading] = useState(true)
   const [error, setError] = useState('')
   const [showSaleForm, setShowSaleForm] = useState(false)
+  const [showBarcodeScanner, setShowBarcodeScanner] = useState(false)
+  const [activeSaleItemIndex, setActiveSaleItemIndex] = useState(0)
   const [newSale, setNewSale] = useState({
     items: [{ productId: '', quantity: 1, unitPrice: 0 }]
   })
-
   const loadSales = async () => {
     try {
       setLoading(true)
@@ -144,6 +146,28 @@ const Sales = () => {
         return item
       })
     }))
+}
+
+  const handleBarcodeSuccess = async (barcode) => {
+    try {
+      const product = await productService.getByBarcode(barcode)
+      if (product) {
+        updateSaleItem(activeSaleItemIndex, 'productId', product.Id.toString())
+        setShowBarcodeScanner(false)
+        toast.success(`Product "${product.name}" selected`)
+      }
+    } catch (err) {
+      toast.error('Product not found for this barcode')
+    }
+  }
+
+  const handleBarcodeError = (error) => {
+    console.warn('Barcode scan error:', error)
+  }
+
+  const openBarcodeScanner = (itemIndex) => {
+    setActiveSaleItemIndex(itemIndex)
+    setShowBarcodeScanner(true)
   }
 
   useEffect(() => {
@@ -273,27 +297,39 @@ const Sales = () => {
                     Add Item
                   </Button>
                 </div>
-                
-                <div className="space-y-4">
+<div className="space-y-4">
                   {newSale.items.map((item, index) => {
                     const selectedProduct = products.find(p => p.Id === parseInt(item.productId))
                     const availableStock = selectedProduct?.stockLevel || 0
                     
                     return (
                       <div key={index} className="grid grid-cols-1 md:grid-cols-4 gap-4 p-4 bg-slate-50 rounded-lg">
-                        <FormField
-                          label="Product"
-                          type="select"
-                          name="productId"
-                          value={item.productId}
-                          onChange={(name, value) => updateSaleItem(index, 'productId', value)}
-                          options={products.map(product => ({ 
-                            value: product.Id.toString(), 
-                            label: `${product.name} (Stock: ${product.stockLevel})` 
-                          }))}
-                          placeholder="Select product"
-                          required
-                        />
+                        <div>
+                          <FormField
+                            label="Product"
+                            type="select"
+                            name="productId"
+                            value={item.productId}
+                            onChange={(name, value) => updateSaleItem(index, 'productId', value)}
+                            options={products.map(product => ({ 
+                              value: product.Id.toString(), 
+                              label: `${product.name} (Stock: ${product.stockLevel})` 
+                            }))}
+                            placeholder="Select product"
+                            required
+                          />
+                          <div className="flex justify-center mt-2">
+                            <Button
+                              variant="ghost"
+                              size="sm"
+                              icon="Camera"
+                              onClick={() => openBarcodeScanner(index)}
+                              className="text-blue-600 hover:text-blue-700 hover:bg-blue-50"
+                            >
+                              Scan Barcode
+                            </Button>
+                          </div>
+                        </div>
                         
                         <div>
                           <FormField
@@ -368,9 +404,17 @@ const Sales = () => {
                 Record Sale
               </Button>
             </div>
-          </Card>
+</Card>
         </motion.div>
       )}
+
+      {/* Barcode Scanner Modal */}
+      <BarcodeScanner
+        isActive={showBarcodeScanner}
+        onScanSuccess={handleBarcodeSuccess}
+        onScanError={handleBarcodeError}
+        onClose={() => setShowBarcodeScanner(false)}
+      />
 
       {/* Sales Table */}
       {sales.length === 0 ? (
