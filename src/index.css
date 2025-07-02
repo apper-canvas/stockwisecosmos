@@ -122,3 +122,24 @@
     background-position: 200% 0;
   }
 }
+
+/* Report Builder Utilities */
+.report-grid {
+  @apply grid gap-4 grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4;
+}
+
+.report-card {
+  @apply bg-white p-4 rounded-lg shadow-card border border-slate-200 hover:shadow-card-hover transition-all duration-200;
+}
+
+.filter-chip {
+  @apply inline-flex items-center px-3 py-1 rounded-full text-xs font-medium bg-slate-100 text-slate-700 hover:bg-slate-200 transition-colors cursor-pointer;
+}
+
+.filter-chip-active {
+  @apply bg-primary-100 text-primary-800 hover:bg-primary-200;
+}
+
+.chart-container {
+  @apply bg-white p-6 rounded-lg shadow-card border border-slate-200;
+}
